@@ -4,13 +4,15 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    # **VARIABLES that start with an "@" are automatically available in the "views" **
+    # **VARIABLES that start with an "@" (instance variables) are automatically available in the "views" **
     @users = User.all  #asks the User mode; to retrieve a list of all users from db and assign to "at-users" variable
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    @user = User.find(params[:id])  # Added to find user record
+    @micropost = @user.microposts.first  #Added to show micropost on user 'show' page
   end
 
   # GET /users/new

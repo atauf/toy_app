@@ -10,5 +10,12 @@
   <%= @user.email %>
 </p>
 
+<% if @micropost %>  <!--Checks that there is at least one micropost -->
+	<p>
+	  <strong>Micropost:</strong>
+	  <%= @micropost.content %>  <!--Had to create instance variable "@micropost" in the 'show' action of the Userscontroller for this to work -->
+	</p>
+<% end %>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
