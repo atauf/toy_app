@@ -4,7 +4,8 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    # **VARIABLES that start with an "@" are automatically available in the "views" **
+    @users = User.all  #asks the User mode; to retrieve a list of all users from db and assign to "at-users" variable
   end
 
   # GET /users/1
